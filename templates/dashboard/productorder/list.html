@@ -1,0 +1,66 @@
+{% extends 'dashboard/base.html' %}
+{% load mathfilters %}
+{% load static %}
+{% block content %}
+    <div class="page-container">
+        <!-- HEADER DESKTOP-->
+        {% include 'dashboard/userbar.html' %}
+        <!-- HEADER DESKTOP-->
+
+        <!-- MAIN CONTENT-->
+        <div class="main-content">
+            <div class="section__content section__content--p30">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="overview-wrap">
+                                <h2 class="title-1">Customer Order List</h2>
+                                {#                            <a class="au-btn au-btn-icon au-btn--blue" href="#">#}
+                                {#                                <i class="zmdi zmdi-plus"></i>add</a>#}
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- DATA TABLE-->
+                            <div class="table-responsive m-b-40">
+                                <table class="table table-borderless table-data3">
+                                    <thead>
+                                    <tr>
+                                        <th>№</th>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Count</th>
+                                        <th>Total</th>
+                                        <th>Created At</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for or_pro in orderproducts %}
+                                        <tr>
+                                            <td>{{ forloop.counter }}</td>
+                                            <td>{{ or_pro.title }}</td>
+                                            <td>{{ or_pro.price }}</td>
+                                            <td>{{ or_pro.count }}</td>
+                                            <td>{{ or_pro.price|mul:or_pro.count }}</td>
+                                            <td>
+                                                <div class="table-data-feature">
+                                                    {{ or_pro.created }}
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- END DATA TABLE-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END MAIN CONTENT-->
+        <!-- END PAGE CONTAINER-->
+    </div>
+{% endblock %}

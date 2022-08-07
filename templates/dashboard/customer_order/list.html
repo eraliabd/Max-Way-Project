@@ -1,0 +1,70 @@
+
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% block content %}
+ <div class="page-container">
+    <!-- HEADER DESKTOP-->
+    {%include 'dashboard/userbar.html'%}
+    <!-- HEADER DESKTOP-->
+
+    <!-- MAIN CONTENT-->
+    <div class="main-content">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="overview-wrap">
+                            <h2 class="title-1"></h2>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- DATA TABLE-->
+                        <div class="table-responsive m-b-40">
+                            <table class="table table-borderless table-data3">
+                                <thead>
+                                    <tr>
+                                        <th>№</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Address</th>
+                                        <th>Status</th>
+                                        <th>Payment</th>
+                                        <th>Created At</th>
+                                        <th>Cart</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for colist in customerorder_list %}
+                                    <tr>
+                                        <td>{{ forloop.counter }}</td>
+                                        <td>{{ colist.first_name }}</td>
+                                        <td>{{ colist.last_name }}</td>
+                                        <td>{{ colist.address }}</td>
+                                        <td>{{ colist.status }}</td>
+                                        <td>{% if colist.payment == 1 %}naxt{% else%}karta{% endif %}</td>
+                                        <td>{{ colist.created }}</td>
+                                        <td>
+                                            <div class="table-data-feature">
+                                                <a class="item" data-toggle="tooltip" href="{% url 'dashboard:orderproduct_list' id=colist.id %}" data-placement="top" title="" data-original-title="Press">
+                                                    <i class="zmdi zmdi-eye"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- END DATA TABLE-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MAIN CONTENT-->
+    <!-- END PAGE CONTAINER-->
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+<h3 class="text-center">Top sold products</h3>
+<div class="table-responsive m-b-40">
+    <table class="table table-borderless table-data3">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Count</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for top in top_products %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ top.product }}</td>
+                <td>{{ top.count }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

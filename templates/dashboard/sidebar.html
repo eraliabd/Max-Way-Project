@@ -1,0 +1,32 @@
+
+{% load static %}
+<!-- MENU SIDEBAR-->
+<aside class="menu-sidebar d-none d-lg-block">
+    <div class="logo">
+        <a href="{% url "dashboard:home" %}">
+            <img src="{% static 'assets/img/logo.svg' %}" alt="Max Way" />
+        </a>
+    </div>
+    <div class="menu-sidebar__content js-scrollbar1">
+        <nav class="navbar-sidebar">
+            <ul class="list-unstyled navbar__list">
+                <li class="active">
+                    <a href="{% url 'dashboard:home' %}"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                </li>
+                <li>
+                    <a href="{% url 'dashboard:category_list' %}"><i class="fas fa-chart-bar"></i>Categories</a>
+                </li>
+                <li>
+                    <a href="{% url 'dashboard:product_list' %}"><i class="fas fa-chart-bar"></i>Products</a>
+                </li>
+                <li>
+                    <a href="{% url 'dashboard:user_list' %}"><i class="fas fa-chart-bar"></i>Users</a>
+                </li>
+                <li>
+                    <a href="{% url 'dashboard:order_list' %}"><i class="fas fa-chart-bar"></i>Orders</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
+<!-- END MENU SIDEBAR-->
