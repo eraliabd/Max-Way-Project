@@ -30,7 +30,7 @@ class Customer(models.Model):
         return f"{self.first_name} {self.last_name}"
 
 class Order(models.Model):
-    payment = models.IntegerField(max_length=50, blank=False, null=False)
+    payment = models.IntegerField(blank=False, null=False)
     status = models.IntegerField(blank=True, null=False, default=1)
     address = models.CharField(max_length=250, blank=False, null=False)
     customer = models.ForeignKey(Customer, blank=True, null=True, on_delete=models.SET_NULL)
