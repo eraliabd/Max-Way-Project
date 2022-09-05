@@ -1,5 +1,8 @@
 # Max-Way-Project
 Max-Way loyihasi 
+Bu loyihada menda uchragan muammolar haqida aytib o'tsam. Karzinaga bog'lash joyida muammo bo'ldi chunki unda AJAX ishlatish kerak ekan.
+AJAX ishlatishdan maqsad brouzer yuklanmasdan karzinaga biz tanlagan mahsulotlar qo'shilarkan. Bunda Ustozimdan ozroq yordam oldim. Usha joyni views qismida ham muammo 
+bo'ldi, unda ham yordam olganman.
 
 ![image](https://user-images.githubusercontent.com/91982815/183283899-fead6eb4-d6a9-49f7-887a-db5b53d2476a.png)
 
